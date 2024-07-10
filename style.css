@@ -1,0 +1,36 @@
+.head-line {
+  display: flex;
+  justify-content: center;
+  font-size: 100px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.search-area {
+  display: flex;
+  justify-content: center;
+}
+.menu-area {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-top: 1px solid rgb(84, 84, 163);
+  border-bottom: 4px double rgb(84, 84, 163);
+}
+
+.menu-area button {
+  border: none;
+  background: none;
+  margin: 5px;
+}
+
+.menu-area button:hover {
+  background-color: rgb(221, 221, 221);
+  border-radius: 4px;
+}
+.news-img-size {
+  max-width: 100%;
+  max-height: 450px;
+}
+.news {
+  border-bottom: 2px solid rgb(84, 84, 163);
+}
