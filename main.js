@@ -33,11 +33,23 @@ const render = () => {
 
 getNews();
 
-const maxLength = 200;
-if (news.description > maxLength) {
-  news.description.textContent = news.description.slice(0, maxLength + "...");
-} else {
-  news.description.textContent = news.description;
-}
-console.log(newsHTML);
-document.getElementById("news-board").innerHTML = newsHTML;
+// const maxLength = 200;
+// if (news.description > maxLength) {
+//   news.description.textContent = news.description.slice(0, maxLength + "...");
+// } else {
+//   news.description.textContent = news.description;
+// }
+// console.log(newsHTML);
+// document.getElementById("news-board").innerHTML = newsHTML;
+
+const sideBtn = document.querySelector(".side-bar");
+const menu = document.querySelector(".side-menu");
+sideBtn.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
+
+const searchBtn = document.querySelector(".searchTool");
+const searchInput = document.querySelector(".userSearch");
+searchBtn.addEventListener("click", () => {
+  searchInput.classList.toggle("userSearch");
+});
