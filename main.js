@@ -9,7 +9,6 @@ const getNews = async () => {
   const date = await response.json();
   newsList = date.articles;
   render();
-  console.log("222", response);
   console.log("333", newsList);
 };
 const render = () => {
@@ -21,14 +20,24 @@ const render = () => {
           </div>
           <div class="col-lg-8">
             <h2>${news.title}</h2>
-            <p>${news.description}</p>
-            <div>${news.source.name}*${news.publishedAt}</div>
+            <p>${news.description || "내용 없음"}</p>
+            <div>${news.source.name || "no source"} // ${moment(
+        news.publishedAt
+      ).fromNow()}</div>
           </div>
         </div>`
     )
     .join("");
-  console.log(newsHTML);
   document.getElementById("news-board").innerHTML = newsHTML;
 };
 
 getNews();
+
+const maxLength = 200;
+if (news.description > maxLength) {
+  news.description.textContent = news.description.slice(0, maxLength + "...");
+} else {
+  news.description.textContent = news.description;
+}
+console.log(newsHTML);
+document.getElementById("news-board").innerHTML = newsHTML;
